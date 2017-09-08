@@ -156,10 +156,10 @@ static int release_gpio(int n, int input, int exported)
 	return 1;
 }
 #else
-static int drive_gpio(int n, int level, struct gpio_list **gpio_to_release)
+static int drive_gpio(int n, int level, struct gpio_list **gpio_to_release) //for windows huaweiwx@sina.com 2017.9.6
 {
-	fprintf(stderr, "GPIO control only available in Linux\n");
-	return 0;
+	setGPIO(n,level);
+	return 1;
 }
 #endif
 
